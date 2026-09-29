@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Funny full-head ski masks. 8 faces nobody on the lift will forget. 2 for $29.99 with free shipping.">
+<meta property="og:title" content="Face Off Masks">
+<meta property="og:description" content="Change your face. Own the slopes. 2 for $29.99, free shipping.">
+<meta property="og:image" content="https://faceoffmasks.netlify.app/img/share.jpg">
+<style>html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Face Off Masks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bowlby+One&family=Figtree:wght@400;600;800&family=DM+Mono:wght@500&display=swap">
+<style>
+/* Layout: ski-lodge poster. Big knit-mask hero, a lift-ticket order card, fair-isle knit bands as dividers. */
+:root{
+  --snow:#eef4f8; --paper:#ffffff; --ink:#14233a; --muted:#56657a;
+  --red:#d7263d; --yellow:#ffc93c; --ice:#b9d8ea; --line:#d4e0ea;
+  --display:"Bowlby One","Arial Black",Impact,sans-serif;
+  --body:"Figtree",system-ui,-apple-system,Segoe UI,sans-serif;
+  --mono:"DM Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --snow:#0d1726; --paper:#16233a; --ink:#eaf2f8; --muted:#9fb0c4;
+  --red:#ff4d63; --yellow:#ffd25c; --ice:#23405e; --line:#27395a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --snow:#0d1726; --paper:#16233a; --ink:#eaf2f8; --muted:#9fb0c4;
+  --red:#ff4d63; --yellow:#ffd25c; --ice:#23405e; --line:#27395a; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--snow);color:var(--ink);font:16px/1.55 var(--body)}
+.wrap{max-width:1120px;margin:0 auto;padding-inline:20px}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1;text-wrap:balance;margin:0}
+.eyebrow{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+/* nav */
+nav{display:flex;align-items:center;justify-content:space-between;padding-block:18px}
+.logo{font-family:var(--display);font-size:24px;letter-spacing:.02em;display:flex;align-items:baseline;gap:8px}
+.logo small{font:600 11px var(--mono);letter-spacing:.2em;text-transform:uppercase;color:var(--red)}
+.navcta{font-weight:800;font-size:14px;text-decoration:none;border:2px solid var(--ink);padding:8px 14px;border-radius:999px}
+.navcta:hover{background:var(--ink);color:var(--snow)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;padding-block:24px 48px}
+.hero h1{font-size:clamp(52px,9vw,112px);letter-spacing:-.01em}
+.hero h1 .r{color:var(--red)}
+.hero p{font-size:19px;color:var(--muted);max-width:30ch;margin:20px 0 28px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;font:800 17px var(--body);border:0;border-radius:999px;padding:16px 26px;cursor:pointer;text-decoration:none;box-shadow:0 5px 0 color-mix(in srgb,var(--red) 55%,#000)}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 color-mix(in srgb,var(--red) 55%,#000)}
+.btn:focus-visible,.opt:focus-visible,.navcta:focus-visible,summary:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:22px;font-size:14px;color:var(--muted)}
+.trust b{color:var(--ink)}
+.stage{position:relative;padding:0 0 40px 0}
+.stage .phone{width:min(62%,300px);margin-left:auto;margin-right:6%;aspect-ratio:9/16;max-width:100%;border-radius:28px;overflow:hidden;border:6px solid var(--ink);background:var(--ink);transform:rotate(3deg);box-shadow:0 18px 40px -18px rgba(20,35,58,.55)}
+.stage .phone video{width:100%;height:100%;object-fit:cover;display:block}
+.stage .cut{position:absolute;left:0;bottom:0;width:42%;height:auto;background:#fff;border-radius:20px;border:4px solid var(--paper);transform:rotate(-5deg);box-shadow:0 12px 30px -12px rgba(20,35,58,.5)}
+.sticker{position:absolute;top:-14px;left:4%;background:var(--yellow);color:#14233a;font:400 15px/1.05 var(--display);padding:14px 12px;border-radius:50%;width:92px;height:92px;display:grid;place-items:center;text-align:center;transform:rotate(-12deg);box-shadow:0 4px 0 rgba(0,0,0,.15);z-index:2}
+@media (prefers-reduced-motion:no-preference){
+  .stage .cut{animation:bob 4s ease-in-out infinite}
+  @keyframes bob{50%{translate:0 -8px}}
+}
+
+/* knit band */
+.knit{height:34px;background:
+  radial-gradient(circle at 50% 50%,var(--red) 3px,transparent 3.5px) 0 0/22px 34px,
+  linear-gradient(var(--ink) 0 6px,transparent 6px 28px,var(--ink) 28px) 0 0/100% 34px;
+  background-color:var(--snow);opacity:.9}
+
+/* sections */
+section{padding-block:64px}
+.sec-h{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+.sec-h h2{font-size:clamp(34px,5vw,52px)}
+
+/* order */
+.order{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start}
+.pick{display:grid;gap:22px}
+.group h3{font:800 15px var(--body);margin-bottom:10px}
+.faces{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:1000px){.faces{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.opt{position:relative;background:var(--paper);border:2px solid var(--line);border-radius:18px;padding:12px;cursor:pointer;text-align:left;color:var(--ink);font:inherit;display:grid;gap:6px;align-content:start}
+.opt[aria-pressed="true"]{border-color:var(--red);box-shadow:0 0 0 3px color-mix(in srgb,var(--red) 22%,transparent)}
+.opt .thumb{background:#fff;border-radius:12px;overflow:hidden;aspect-ratio:1;max-width:100%}
+.opt .thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.opt .count{position:absolute;top:18px;right:18px;background:var(--red);color:#fff;font:800 13px var(--body);border-radius:999px;min-width:26px;height:26px;display:grid;place-items:center;padding:0 7px}
+.opt strong{font-size:16px}
+.opt span{font-size:13px;color:var(--muted)}
+.packs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.packs .opt{grid-template-columns:1fr auto;align-items:center}
+.packs .price{font:400 26px var(--display)}
+.save{position:absolute;top:-10px;right:12px;background:var(--yellow);color:#14233a;font:800 11px var(--body);letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:6px}
+.hint{font-size:13px;color:var(--muted);margin-top:8px}
+
+/* lift ticket */
+.ticket{position:sticky;top:calc(env(safe-area-inset-top,0px) + 16px);background:var(--paper);border-radius:16px;border:2px solid var(--ink);overflow:hidden}
+.ticket .top{background:var(--ink);color:var(--snow);padding:14px 18px;display:flex;justify-content:space-between;align-items:center;font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.ticket .top .hole{width:14px;height:14px;border-radius:50%;background:var(--snow)}
+.ticket .body{padding:18px;display:grid;gap:10px;font-family:var(--mono);font-size:14px}
+.row{display:flex;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums}
+.row .k{color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-size:12px}
+.perf{border:0;border-top:2px dashed var(--line);margin:4px 0}
+.total{font-family:var(--display);font-size:40px;line-height:1}
+.ticket .btn{width:100%;justify-content:center;margin-top:6px}
+.ticket .btn:disabled{opacity:.7;cursor:wait;transform:none}
+.note{font:13px/1.45 var(--body);color:var(--muted);text-align:center}
+.flash{font:600 14px var(--body);background:color-mix(in srgb,var(--yellow) 30%,var(--paper));border-radius:10px;padding:10px 12px}
+.barcode{height:34px;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 5px,transparent 5px 9px,var(--ink) 9px 12px,transparent 12px 14px);opacity:.8}
+
+
+/* slope gallery */
+.slope{display:grid;grid-template-columns:1.1fr .9fr;gap:28px;align-items:center}
+.slope img{width:100%;height:auto;border-radius:24px;display:block;box-shadow:0 18px 40px -18px rgba(20,35,58,.5)}
+.slope p{color:var(--muted);font-size:18px;max-width:34ch;margin:16px 0 0}
+@media (max-width:880px){.slope{grid-template-columns:1fr}}
+
+
+/* wide banner */
+.banner{position:relative;max-width:1120px;margin:0 auto;padding-inline:20px}
+.banner img{width:100%;height:auto;display:block;border-radius:28px;aspect-ratio:16/9;object-fit:cover}
+.banner .cap{position:absolute;left:44px;top:17%;right:44px;color:#fff;font:400 clamp(26px,5vw,56px)/1 var(--display);text-shadow:0 2px 18px rgba(0,0,0,.45);max-width:12ch}
+@media (max-width:560px){.banner .cap{left:32px;top:16%}}
+
+/* specs */
+.specs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px}
+.spec{border-top:3px solid var(--ink);padding-top:14px}
+.spec h3{font-size:22px;margin-bottom:8px}
+.spec p{margin:0;color:var(--muted);font-size:15px}
+
+/* faq */
+.faq{display:grid;gap:10px;max-width:760px}
+details{background:var(--paper);border-radius:14px;padding:16px 18px;border:1px solid var(--line)}
+summary{font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
+summary::after{content:"+";font-family:var(--display);color:var(--red)}
+details[open] summary::after{content:"–"}
+details p{margin:10px 0 0;color:var(--muted)}
+
+footer{background:var(--ink);color:var(--snow);padding-block:40px;margin-top:40px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px;align-items:end}
+footer .big{font-family:var(--display);font-size:clamp(40px,8vw,84px);line-height:.9}
+footer small{opacity:.7;font-size:13px}
+
+@media (max-width:880px){
+  .hero,.order{grid-template-columns:1fr}
+  .specs{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .ticket{position:static}
+}
+@media (max-width:460px){
+  .specs,.packs{grid-template-columns:1fr}
+  .sticker{width:76px;height:76px;font-size:12px}
+}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <nav>
+    <div class="logo">FACE OFF <small>masks</small></div>
+    <a class="navcta" href="#order">Shop now</a>
+  </nav>
+
+  <header class="hero">
+    <div>
+      <div class="eyebrow">Full-head ski masks · 8 faces · Winter 26/27</div>
+      <h1 style="margin-top:14px">Put your <span class="r">game face</span> on.</h1>
+      <p>Stretchy, full-coverage ski masks printed with faces nobody on the lift will forget.</p>
+      <a class="btn" href="#order">Pick your face →</a>
+      <div class="trust"><span><b>Ships in 1–2 days</b> from South Carolina</span><span><b>One size</b> fits most adults</span></div>
+    </div>
+    <div class="stage">
+      <div class="sticker" aria-hidden="true">2 for<br>$29.99</div>
+      <div class="phone"><video src="img/clip.mp4" poster="img/clip-poster.jpg" autoplay muted loop playsinline aria-label="People on the slopes putting on Face Off masks"></video></div>
+      <img class="cut" src="img/stache.jpg" alt="Grandpa Stache mask" width="800" height="800">
+    </div>
+  </header>
+</div>
+
+<div class="knit" aria-hidden="true"></div>
+
+<section id="order">
+  <div class="wrap">
+    <div class="sec-h">
+      <div class="eyebrow">Step up to the lift</div>
+      <h2>Choose your face</h2>
+    </div>
+    <div class="order">
+      <div class="pick">
+        <div class="group">
+          <h3>1. Pick a pack</h3>
+          <div class="packs" role="group" aria-label="Pack size">
+            <button class="opt" id="pack-1" data-pack="1" aria-pressed="false">
+              <div><strong>Single</strong><br><span>1 mask</span></div><div class="price">$19.99</div>
+            </button>
+            <button class="opt" id="pack-2" data-pack="2" aria-pressed="true">
+              <i class="save">Save $10</i>
+              <div><strong>Duo pack</strong><br><span>2 masks, mix any faces</span></div><div class="price">$29.99</div>
+            </button>
+          </div>
+        </div>
+        <div class="group">
+          <h3 id="faceLabel">2. Pick 2 faces</h3>
+          <div class="faces" role="group" aria-labelledby="faceLabel">
+            <button class="opt" id="face-stache" data-pick="stache" aria-pressed="false">
+              <div class="thumb"><img src="img/stache.jpg" alt="Grandpa Stache mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Grandpa Stache</strong><span>Grumpy face, giant white mustache</span>
+            </button>
+            <button class="opt" id="face-gus" data-pick="gus" aria-pressed="false">
+              <div class="thumb"><img src="img/gus.jpg" alt="Grumpy Gus mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Grumpy Gus</strong><span>Mustache, cigarette, zero smiles</span>
+            </button>
+            <button class="opt" id="face-cigar" data-pick="cigar" aria-pressed="false">
+              <div class="thumb"><img src="img/cigar.jpg" alt="Cigar Carl mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Cigar Carl</strong><span>Happy grandpa with a fat cigar</span>
+            </button>
+            <button class="opt" id="face-granny" data-pick="granny" aria-pressed="false">
+              <div class="thumb"><img src="img/granny.jpg" alt="Smokin' Granny mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Smokin' Granny</strong><span>Gray curls, zero patience</span>
+            </button>
+            <button class="opt" id="face-tony" data-pick="tony" aria-pressed="false">
+              <div class="thumb"><img src="img/tony.jpg" alt="Toothless Tony mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Toothless Tony</strong><span>Full-head grin, missing teeth</span>
+            </button>
+            <button class="opt" id="face-snaggle" data-pick="snaggle" aria-pressed="false">
+              <div class="thumb"><img src="img/snaggle.jpg" alt="Snaggle Smile mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Snaggle Smile</strong><span>Half-face grin, gap teeth</span>
+            </button>
+            <button class="opt" id="face-bigmouth" data-pick="bigmouth" aria-pressed="false">
+              <div class="thumb"><img src="img/bigmouth.jpg" alt="Big Mouth mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Big Mouth</strong><span>Half-face, huge open grin</span>
+            </button>
+            <button class="opt" id="face-tongue" data-pick="tongue" aria-pressed="false">
+              <div class="thumb"><img src="img/tongue.jpg" alt="Tongue Out mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Tongue Out</strong><span>Half-face, tongue all the way out</span>
+            </button>
+          </div>
+          <p class="hint" id="hint">Mix any two, or tap a face twice to get two of the same.</p>
+        </div>
+      </div>
+
+      <aside class="ticket" aria-live="polite">
+        <div class="top"><span>Lift ticket · Adult</span><span class="hole"></span></div>
+        <div class="body">
+          <div class="row"><span class="k">Pack</span><span id="tPack">Duo</span></div>
+          <div class="row"><span class="k">Faces</span><span id="tFaces">Stache + Tony</span></div>
+          <div class="row"><span class="k">Shipping</span><span id="tShip">Free</span></div>
+          <hr class="perf">
+          <div class="row" style="align-items:end"><span class="k">Total</span><span class="total" id="tTotal">$29.99</span></div>
+          <button class="btn" id="checkout">Checkout securely</button>
+          <div class="flash" id="flash" hidden></div>
+          <div class="note">Card, Apple Pay, Cash App &amp; Klarna via Stripe. Ordering more than one? Extra packs ship with the same faces you picked.</div>
+          <div class="barcode" aria-hidden="true"></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<div class="knit" aria-hidden="true"></div>
+
+<section style="padding-bottom:0">
+  <div class="wrap slope">
+    <img src="img/pals.jpg" alt="Two friends on the slopes, one wearing the Toothless Tony mask" width="400" height="400" loading="lazy">
+    <div>
+      <div class="eyebrow">Buddy system</div>
+      <h2 style="font-size:clamp(34px,5vw,52px);margin-top:12px">Better in pairs</h2>
+      <p>Grab the Duo pack, pick two faces, and make the whole chairlift line turn around.</p>
+      <a class="btn" href="#order" style="margin-top:22px">Get the Duo · $29.99</a>
+    </div>
+  </div>
+</section>
+
+<div class="banner" style="margin-top:64px">
+  <img src="img/slope-wide.jpg" alt="Skier carving fresh powder in the Grandpa Stache mask" width="1400" height="787" loading="lazy">
+  <div class="cap">Grandpa's still got it.</div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="sec-h"><div class="eyebrow">What you get</div><h2>Built for the slopes</h2></div>
+    <div class="specs">
+      <div class="spec"><h3>Full coverage</h3><p>Head, face and neck in one piece. No gaps for wind to get in.</p></div>
+      <div class="spec"><h3>Photo print</h3><p>Lifelike face print on soft, stretchy fabric that moves with you.</p></div>
+      <div class="spec"><h3>One size</h3><p>Stretches to fit most adult heads, with or without a helmet.</p></div>
+      <div class="spec"><h3>Fast shipping</h3><p>Ships from Myrtle Beach, SC. Most orders arrive in 2–5 days.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-h"><div class="eyebrow">Questions</div><h2>Before you hit the lift</h2></div>
+    <div class="faq">
+      <details><summary>Can I see and breathe normally?</summary><p>Yes. The eye opening is wide enough for goggles, and the thin stretch fabric is breathable.</p></details>
+      <details><summary>Does it fit under a helmet?</summary><p>It's thin enough to wear under most ski and snowboard helmets.</p></details>
+      <details><summary>How do I wash it?</summary><p>Hand wash cold and lay flat to dry. Don't put it in the dryer.</p></details>
+      <details><summary>What's your return policy?</summary><p>Unworn masks can be returned within 30 days. Email us and we'll sort it out.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="big">FACE<br>OFF</div>
+    <small>© 2026 Face Off Masks · Myrtle Beach, SC</small>
+  </div>
+</footer>
+
+<script>
+/* Checkout runs through /.netlify/functions/checkout (prices live on the server). */
+
+/* ===== Order state ===== */
+const NAMES = {stache:"Stache", gus:"Gus", cigar:"Carl", granny:"Granny", tony:"Tony", snaggle:"Snaggle", bigmouth:"Big Mouth", tongue:"Tongue Out"};
+let pack = 2, picks = ["stache","tony"];
+const $ = id => document.getElementById(id);
+
+function render(){
+  document.querySelectorAll("[data-pack]").forEach(b=>b.setAttribute("aria-pressed", String(+b.dataset.pack===pack)));
+  document.querySelectorAll("[data-pick]").forEach(b=>{
+    const n = picks.filter(p=>p===b.dataset.pick).length;
+    b.setAttribute("aria-pressed", String(n>0));
+    const c=b.querySelector(".count"); c.hidden = n<2; c.textContent = "×"+n;
+  });
+  $("faceLabel").textContent = pack===2 ? "2. Pick 2 faces" : "2. Pick a face";
+  $("hint").hidden = pack!==2;
+  $("tPack").textContent = pack===2 ? "Duo" : "Single";
+  $("tFaces").textContent = picks.map(p=>NAMES[p]).join(" + ") || "—";
+  $("tShip").textContent = pack===2 ? "Free" : "$4.99";
+  $("tTotal").textContent = pack===2 ? "$29.99" : "$24.98";
+  $("flash").hidden = true;
+}
+document.querySelectorAll("[data-pack]").forEach(b=>b.addEventListener("click",()=>{
+  pack = +b.dataset.pack;
+  picks = picks.slice(0,pack);
+  if(!picks.length) picks=["stache"];
+  render();
+}));
+document.querySelectorAll("[data-pick]").forEach(b=>b.addEventListener("click",()=>{
+  const f = b.dataset.pick;
+  if(pack===1){ picks=[f]; }
+  else { picks = [...picks.slice(-1), f]; }
+  render();
+}));
+$("checkout").addEventListener("click", async ()=>{
+  const btn=$("checkout"), flash=$("flash");
+  flash.hidden=true; btn.disabled=true; btn.textContent="Opening checkout…";
+  try{
+    const r = await fetch("/.netlify/functions/checkout",{
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body: JSON.stringify({pack, faces:picks})
+    });
+    const d = await r.json().catch(()=>({}));
+    if(!r.ok || !d.url) throw new Error(d.error || "Checkout is unavailable right now.");
+    window.location.href = d.url;
+  }catch(e){
+    flash.textContent = e.message + " Please try again in a minute.";
+    flash.hidden=false; btn.disabled=false; btn.textContent="Checkout securely";
+  }
+});
+render();
+</script>
+
+</body>
+</html>
