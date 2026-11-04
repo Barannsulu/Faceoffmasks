@@ -2,13 +2,18 @@
 // Needs one environment variable in Netlify: STRIPE_SECRET_KEY (sk_test_... or sk_live_...).
 
 const FACES = {
+  granny:   { name: "Smokin' Sam",    code: "001",     img: "img/sam.jpg" },
+  tony:     { name: "Toothless Tony", code: "002",     img: "img/tony.jpg" },
+  gus:      { name: "Grumpy Gus",     code: "003",     img: "img/gus.jpg" },
+  bigmouth: { name: "Big Mouth",      code: "005",     img: "img/bigmouth.jpg" },
+  snaggle:  { name: "Snaggle Smile",  code: "006",     img: "img/snaggle.jpg" },
+  pearly:   { name: "Pearly Grin",    code: "007",     img: "img/pearly.jpg" },
+  glamma:   { name: "Glamma",         code: "008",     img: "img/glamma.jpg" },
+  ruby:     { name: "Rowdy Ruby",     code: "009",     img: "img/ruby.jpg" },
+  willie:   { name: "Wild Willie",    code: "011",     img: "img/willie.jpg" },
+  bucky:    { name: "Buck Tooth Bob", code: "014",     img: "img/bucky.jpg" },
   stache:   { name: "Grandpa Stache", code: "?",       img: "img/stache.jpg" },
-  gus:      { name: "Grumpy Gus",     code: "Style-4", img: "img/gus.jpg" },
   cigar:    { name: "Cigar Carl",     code: "Style-9", img: "img/cigar.jpg" },
-  granny:   { name: "Smokin' Granny", code: "Style-5", img: "img/granny.jpg" },
-  tony:     { name: "Toothless Tony", code: "?",       img: "img/tony.jpg" },
-  snaggle:  { name: "Snaggle Smile",  code: "Style-7", img: "img/snaggle.jpg" },
-  bigmouth: { name: "Big Mouth",      code: "Style-3", img: "img/bigmouth.jpg" },
   tongue:   { name: "Tongue Out",     code: "Style-2", img: "img/tongue.jpg" },
 };
 
