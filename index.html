@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Funny full-head ski masks. 8 faces nobody on the lift will forget. 2 for $29.99 with free shipping.">
+<meta name="description" content="Funny full-head ski masks. 13 faces nobody on the lift will forget. 2 for $29.99 with free shipping.">
 <meta property="og:title" content="Face Off Masks">
 <meta property="og:description" content="Change your face. Own the slopes. 2 for $29.99, free shipping.">
 <meta property="og:image" content="https://faceoffmasks.netlify.app/img/share.jpg">
@@ -78,7 +78,8 @@ section{padding-block:64px}
 .order{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:start}
 .pick{display:grid;gap:22px}
 .group h3{font:800 15px var(--body);margin-bottom:10px}
-.faces{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.faces{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+.opt .low{position:absolute;top:18px;left:18px;background:var(--yellow);color:#14233a;font:800 11px var(--body);letter-spacing:.04em;text-transform:uppercase;border-radius:6px;padding:3px 7px}
 @media (max-width:1000px){.faces{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .opt{position:relative;background:var(--paper);border:2px solid var(--line);border-radius:18px;padding:12px;cursor:pointer;text-align:left;color:var(--ink);font:inherit;display:grid;gap:6px;align-content:start}
 .opt[aria-pressed="true"]{border-color:var(--red);box-shadow:0 0 0 3px color-mix(in srgb,var(--red) 22%,transparent)}
@@ -163,7 +164,7 @@ footer small{opacity:.7;font-size:13px}
 
   <header class="hero">
     <div>
-      <div class="eyebrow">Full-head ski masks · 8 faces · Winter 26/27</div>
+      <div class="eyebrow">Full-head ski masks · 13 faces · Winter 26/27</div>
       <h1 style="margin-top:14px">Put your <span class="r">game face</span> on.</h1>
       <p>Stretchy, full-coverage ski masks printed with faces nobody on the lift will forget.</p>
       <a class="btn" href="#order">Pick your face →</a>
@@ -202,45 +203,70 @@ footer small{opacity:.7;font-size:13px}
         <div class="group">
           <h3 id="faceLabel">2. Pick 2 faces</h3>
           <div class="faces" role="group" aria-labelledby="faceLabel">
-            <button class="opt" id="face-stache" data-pick="stache" aria-pressed="false">
-              <div class="thumb"><img src="img/stache.jpg" alt="Grandpa Stache mask" loading="lazy"></div>
+            <button class="opt" id="face-granny" data-pick="granny" aria-pressed="false">
+              <div class="thumb"><img src="img/sam.jpg" alt="Smokin' Sam mask" loading="lazy"></div>
               <i class="count" hidden></i>
-              <strong>Grandpa Stache</strong><span>Grumpy face, giant white mustache</span>
+              <strong>Smokin' Sam</strong><span>Gray curls, gap teeth, cigarette</span>
+            </button>
+            <button class="opt" id="face-tony" data-pick="tony" aria-pressed="false">
+              <div class="thumb"><img src="img/tony.jpg" alt="Toothless Tony mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Toothless Tony</strong><span>Scruffy beard, missing teeth</span>
             </button>
             <button class="opt" id="face-gus" data-pick="gus" aria-pressed="false">
               <div class="thumb"><img src="img/gus.jpg" alt="Grumpy Gus mask" loading="lazy"></div>
               <i class="count" hidden></i>
-              <strong>Grumpy Gus</strong><span>Mustache, cigarette, zero smiles</span>
+              <strong>Grumpy Gus</strong><span>White mustache and a cigarette</span>
+            </button>
+            <button class="opt" id="face-bigmouth" data-pick="bigmouth" aria-pressed="false">
+              <div class="thumb"><img src="img/bigmouth.jpg" alt="Big Mouth mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Big Mouth</strong><span>Bandana hood, huge open laugh</span>
+            </button>
+            <button class="opt" id="face-snaggle" data-pick="snaggle" aria-pressed="false">
+              <div class="thumb"><img src="img/snaggle.jpg" alt="Snaggle Smile mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Snaggle Smile</strong><span>Bandana hood, gap-tooth grin</span>
+            </button>
+            <button class="opt" id="face-pearly" data-pick="pearly" aria-pressed="false">
+              <div class="thumb"><img src="img/pearly.jpg" alt="Pearly Grin mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Pearly Grin</strong><span>Bandana hood, giant toothy smile</span>
+            </button>
+            <button class="opt" id="face-glamma" data-pick="glamma" aria-pressed="false">
+              <div class="thumb"><img src="img/glamma.jpg" alt="Glamma mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Glamma</strong><span>Red lipstick, pearls, one tooth missing</span>
+            </button>
+            <button class="opt" id="face-willie" data-pick="willie" aria-pressed="false">
+              <div class="thumb"><img src="img/willie.jpg" alt="Wild Willie mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Wild Willie</strong><span>White beard, tongue out</span>
+            </button>
+            <button class="opt" id="face-bucky" data-pick="bucky" aria-pressed="false">
+              <div class="thumb"><img src="img/bucky.jpg" alt="Buck Tooth Bob mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Buck Tooth Bob</strong><span>Bald, buck teeth, little mustache</span>
+            </button>
+            <button class="opt" id="face-ruby" data-pick="ruby" aria-pressed="false">
+              <div class="thumb"><img src="img/ruby.jpg" alt="Rowdy Ruby mask" loading="lazy"></div>
+              <i class="count" hidden></i><i class="low">Only 4 left</i>
+              <strong>Rowdy Ruby</strong><span>Red curls, mid-laugh</span>
+            </button>
+            <button class="opt" id="face-stache" data-pick="stache" aria-pressed="false">
+              <div class="thumb"><img src="img/stache.jpg" alt="Grandpa Stache mask" loading="lazy"></div>
+              <i class="count" hidden></i>
+              <strong>Grandpa Stache</strong><span>Grumpy face, giant white mustache</span>
             </button>
             <button class="opt" id="face-cigar" data-pick="cigar" aria-pressed="false">
               <div class="thumb"><img src="img/cigar.jpg" alt="Cigar Carl mask" loading="lazy"></div>
               <i class="count" hidden></i>
               <strong>Cigar Carl</strong><span>Happy grandpa with a fat cigar</span>
             </button>
-            <button class="opt" id="face-granny" data-pick="granny" aria-pressed="false">
-              <div class="thumb"><img src="img/granny.jpg" alt="Smokin' Granny mask" loading="lazy"></div>
-              <i class="count" hidden></i>
-              <strong>Smokin' Granny</strong><span>Gray curls, zero patience</span>
-            </button>
-            <button class="opt" id="face-tony" data-pick="tony" aria-pressed="false">
-              <div class="thumb"><img src="img/tony.jpg" alt="Toothless Tony mask" loading="lazy"></div>
-              <i class="count" hidden></i>
-              <strong>Toothless Tony</strong><span>Full-head grin, missing teeth</span>
-            </button>
-            <button class="opt" id="face-snaggle" data-pick="snaggle" aria-pressed="false">
-              <div class="thumb"><img src="img/snaggle.jpg" alt="Snaggle Smile mask" loading="lazy"></div>
-              <i class="count" hidden></i>
-              <strong>Snaggle Smile</strong><span>Half-face grin, gap teeth</span>
-            </button>
-            <button class="opt" id="face-bigmouth" data-pick="bigmouth" aria-pressed="false">
-              <div class="thumb"><img src="img/bigmouth.jpg" alt="Big Mouth mask" loading="lazy"></div>
-              <i class="count" hidden></i>
-              <strong>Big Mouth</strong><span>Half-face, huge open grin</span>
-            </button>
             <button class="opt" id="face-tongue" data-pick="tongue" aria-pressed="false">
               <div class="thumb"><img src="img/tongue.jpg" alt="Tongue Out mask" loading="lazy"></div>
               <i class="count" hidden></i>
-              <strong>Tongue Out</strong><span>Half-face, tongue all the way out</span>
+              <strong>Tongue Out</strong><span>Bandana hood, tongue all the way out</span>
             </button>
           </div>
           <p class="hint" id="hint">Mix any two, or tap a face twice to get two of the same.</p>
@@ -251,7 +277,7 @@ footer small{opacity:.7;font-size:13px}
         <div class="top"><span>Lift ticket · Adult</span><span class="hole"></span></div>
         <div class="body">
           <div class="row"><span class="k">Pack</span><span id="tPack">Duo</span></div>
-          <div class="row"><span class="k">Faces</span><span id="tFaces">Stache + Tony</span></div>
+          <div class="row"><span class="k">Faces</span><span id="tFaces">Gus + Tony</span></div>
           <div class="row"><span class="k">Shipping</span><span id="tShip">Free</span></div>
           <hr class="perf">
           <div class="row" style="align-items:end"><span class="k">Total</span><span class="total" id="tTotal">$29.99</span></div>
@@ -311,7 +337,7 @@ footer small{opacity:.7;font-size:13px}
 <footer>
   <div class="wrap">
     <div class="big">FACE<br>OFF</div>
-    <small>© 2026 Face Off Masks · Myrtle Beach, SC</small>
+    <small>Product images are illustrations; actual print may vary slightly.<br>© 2026 Face Off Masks · Myrtle Beach, SC</small>
   </div>
 </footer>
 
@@ -319,8 +345,8 @@ footer small{opacity:.7;font-size:13px}
 /* Checkout runs through /.netlify/functions/checkout (prices live on the server). */
 
 /* ===== Order state ===== */
-const NAMES = {stache:"Stache", gus:"Gus", cigar:"Carl", granny:"Granny", tony:"Tony", snaggle:"Snaggle", bigmouth:"Big Mouth", tongue:"Tongue Out"};
-let pack = 2, picks = ["stache","tony"];
+const NAMES = {granny:"Sam", tony:"Tony", gus:"Gus", bigmouth:"Big Mouth", snaggle:"Snaggle", pearly:"Pearly", glamma:"Glamma", willie:"Willie", bucky:"Bob", ruby:"Ruby", stache:"Stache", cigar:"Carl", tongue:"Tongue Out"};
+let pack = 2, picks = ["gus","tony"];
 const $ = id => document.getElementById(id);
 
 function render(){
@@ -341,7 +367,7 @@ function render(){
 document.querySelectorAll("[data-pack]").forEach(b=>b.addEventListener("click",()=>{
   pack = +b.dataset.pack;
   picks = picks.slice(0,pack);
-  if(!picks.length) picks=["stache"];
+  if(!picks.length) picks=["gus"];
   render();
 }));
 document.querySelectorAll("[data-pick]").forEach(b=>b.addEventListener("click",()=>{
