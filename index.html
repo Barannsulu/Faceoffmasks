@@ -81,6 +81,8 @@ section{padding-block:64px}
 .group h3{font:800 15px var(--body);margin-bottom:10px}
 .faces{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .opt .low{position:absolute;top:18px;left:18px;background:var(--yellow);color:#14233a;font:800 11px var(--body);letter-spacing:.04em;text-transform:uppercase;border-radius:6px;padding:3px 7px}
+.opt .low.tag-pick{background:var(--red);color:#fff}
+.opt .low.tag-new{background:var(--ice);color:var(--ink)}
 @media (max-width:1000px){.faces{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .opt{position:relative;background:var(--paper);border:2px solid var(--line);border-radius:18px;padding:12px;cursor:pointer;text-align:left;color:var(--ink);font:inherit;display:grid;gap:6px;align-content:start}
 .opt[aria-pressed="true"]{border-color:var(--red);box-shadow:0 0 0 3px color-mix(in srgb,var(--red) 22%,transparent)}
@@ -92,7 +94,7 @@ section{padding-block:64px}
 .packs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .packs .opt{grid-template-columns:1fr auto;align-items:center}
 .packs .price{font:400 26px var(--display)}
-.save{position:absolute;top:-10px;right:12px;background:var(--yellow);color:#14233a;font:800 11px var(--body);letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:6px}
+.save{position:absolute;top:-10px;right:12px;white-space:nowrap;background:var(--yellow);color:#14233a;font:800 11px var(--body);letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:6px}
 .hint{font-size:13px;color:var(--muted);margin-top:8px}
 
 /* lift ticket */
@@ -196,7 +198,7 @@ footer small{opacity:.7;font-size:13px}
               <div><strong>Single</strong><br><span>1 mask</span></div><div class="price">$19.99</div>
             </button>
             <button class="opt" id="pack-2" data-pack="2" aria-pressed="true">
-              <i class="save">Save $10</i>
+              <i class="save">Save $10 + Free shipping</i>
               <div><strong>Duo pack</strong><br><span>2 masks, mix any faces</span></div><div class="price">$29.99</div>
             </button>
           </div>
@@ -206,7 +208,7 @@ footer small{opacity:.7;font-size:13px}
           <div class="faces" role="group" aria-labelledby="faceLabel">
             <button class="opt" id="face-granny" data-pick="granny" aria-pressed="false">
               <div class="thumb"><img src="img/sam.jpg" alt="Smokin' Sam mask" loading="lazy"></div>
-              <i class="count" hidden></i>
+              <i class="count" hidden></i><i class="low tag-pick">Staff pick</i>
               <strong>Smokin' Sam</strong><span>Gray curls, gap teeth, cigarette</span>
             </button>
             <button class="opt" id="face-tony" data-pick="tony" aria-pressed="false">
@@ -231,22 +233,22 @@ footer small{opacity:.7;font-size:13px}
             </button>
             <button class="opt" id="face-pearly" data-pick="pearly" aria-pressed="false">
               <div class="thumb"><img src="img/pearly.jpg" alt="Pearly Grin mask" loading="lazy"></div>
-              <i class="count" hidden></i>
+              <i class="count" hidden></i><i class="low tag-new">New</i>
               <strong>Pearly Grin</strong><span>Bandana hood, giant toothy smile</span>
             </button>
             <button class="opt" id="face-glamma" data-pick="glamma" aria-pressed="false">
               <div class="thumb"><img src="img/glamma.jpg" alt="Glamma mask" loading="lazy"></div>
-              <i class="count" hidden></i>
+              <i class="count" hidden></i><i class="low tag-pick">Staff pick</i>
               <strong>Glamma</strong><span>Red lipstick, pearls, one tooth missing</span>
             </button>
             <button class="opt" id="face-willie" data-pick="willie" aria-pressed="false">
               <div class="thumb"><img src="img/willie.jpg" alt="Wild Willie mask" loading="lazy"></div>
-              <i class="count" hidden></i>
+              <i class="count" hidden></i><i class="low tag-new">New</i>
               <strong>Wild Willie</strong><span>White beard, tongue out</span>
             </button>
             <button class="opt" id="face-bucky" data-pick="bucky" aria-pressed="false">
               <div class="thumb"><img src="img/bucky.jpg" alt="Buck Tooth Bob mask" loading="lazy"></div>
-              <i class="count" hidden></i>
+              <i class="count" hidden></i><i class="low tag-new">New</i>
               <strong>Buck Tooth Bob</strong><span>Bald, buck teeth, little mustache</span>
             </button>
             <button class="opt" id="face-ruby" data-pick="ruby" aria-pressed="false">
