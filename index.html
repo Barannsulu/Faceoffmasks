@@ -102,6 +102,7 @@ dialog.big h3{font:400 28px/1.05 var(--display)}
 dialog.big p{margin:0;color:var(--muted)}
 dialog.big .btn{justify-content:center;margin-top:10px}
 dialog.big .x{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(20,35,58,.78);color:#fff;font:700 20px/1 var(--body);cursor:pointer}
+@media (hover: none), (pointer: coarse){.opt .zoom{display:none}.opt .thumb{cursor:pointer}}
 .packs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
 .packs .opt{grid-template-columns:1fr auto;align-items:center}
 .packs .price{font:400 26px var(--display)}
@@ -218,67 +219,67 @@ footer small{opacity:.7;font-size:13px}
           <h3 id="faceLabel">2. Pick 2 faces</h3>
           <div class="faces" role="group" aria-labelledby="faceLabel">
             <div class="opt" role="button" tabindex="0" id="face-granny" data-pick="granny" aria-pressed="false">
-              <div class="thumb" title="Tap to enlarge"><img src="img/sam.jpg" alt="Smokin' Sam mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
+              <div class="thumb"><img src="img/sam.jpg" alt="Smokin' Sam mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
               <i class="count" hidden></i><i class="low tag-pick">Popular</i>
               <strong>Smokin' Sam</strong><span>Gray curls, gap teeth, cigarette</span>
             </div>
             <div class="opt" role="button" tabindex="0" id="face-tony" data-pick="tony" aria-pressed="false">
-              <div class="thumb" title="Tap to enlarge"><img src="img/tony.jpg" alt="Toothless Tony mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
+              <div class="thumb"><img src="img/tony.jpg" alt="Toothless Tony mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
               <i class="count" hidden></i>
               <strong>Toothless Tony</strong><span>Scruffy beard, missing teeth</span>
             </div>
             <div class="opt" role="button" tabindex="0" id="face-gus" data-pick="gus" aria-pressed="false">
-              <div class="thumb" title="Tap to enlarge"><img src="img/gus.jpg" alt="Grumpy Gus mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
+              <div class="thumb"><img src="img/gus.jpg" alt="Grumpy Gus mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
               <i class="count" hidden></i><i class="low tag-pick">Popular</i>
               <strong>Grumpy Gus</strong><span>White mustache and a cigarette</span>
             </div>
             <div class="opt" role="button" tabindex="0" id="face-bigmouth" data-pick="bigmouth" aria-pressed="false">
-              <div class="thumb" title="Tap to enlarge"><img src="img/bigmouth.jpg" alt="Big Mouth mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
+              <div class="thumb"><img src="img/bigmouth.jpg" alt="Big Mouth mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
               <i class="count" hidden></i><i class="low tag-pick">Popular</i>
               <strong>Big Mouth</strong><span>Bandana hood, huge open laugh</span>
             </div>
             <div class="opt" role="button" tabindex="0" id="face-snaggle" data-pick="snaggle" aria-pressed="false">
-              <div class="thumb" title="Tap to enlarge"><img src="img/snaggle.jpg" alt="Snaggle Smile mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
+              <div class="thumb"><img src="img/snaggle.jpg" alt="Snaggle Smile mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
               <i class="count" hidden></i>
               <strong>Snaggle Smile</strong><span>Bandana hood, gap-tooth grin</span>
             </div>
             <div class="opt" role="button" tabindex="0" id="face-pearly" data-pick="pearly" aria-pressed="false">
-              <div class="thumb" title="Tap to enlarge"><img src="img/pearly.jpg" alt="Pearly Grin mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
+              <div class="thumb"><img src="img/pearly.jpg" alt="Pearly Grin mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
               <i class="count" hidden></i><i class="low tag-new">New</i>
               <strong>Pearly Grin</strong><span>Bandana hood, giant toothy smile</span>
             </div>
             <div class="opt" role="button" tabindex="0" id="face-glamma" data-pick="glamma" aria-pressed="false">
-              <div class="thumb" title="Tap to enlarge"><img src="img/glamma.jpg" alt="Glamma mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
+              <div class="thumb"><img src="img/glamma.jpg" alt="Glamma mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
               <i class="count" hidden></i>
               <strong>Glamma</strong><span>Red lipstick, pearls, one tooth missing</span>
             </div>
             <div class="opt" role="button" tabindex="0" id="face-willie" data-pick="willie" aria-pressed="false">
-              <div class="thumb" title="Tap to enlarge"><img src="img/willie.jpg" alt="Wild Willie mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
+              <div class="thumb"><img src="img/willie.jpg" alt="Wild Willie mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
               <i class="count" hidden></i><i class="low tag-new">New</i>
               <strong>Wild Willie</strong><span>White beard, tongue out</span>
             </div>
             <div class="opt" role="button" tabindex="0" id="face-bucky" data-pick="bucky" aria-pressed="false">
-              <div class="thumb" title="Tap to enlarge"><img src="img/bucky.jpg" alt="Buck Tooth Bob mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
+              <div class="thumb"><img src="img/bucky.jpg" alt="Buck Tooth Bob mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
               <i class="count" hidden></i><i class="low tag-new">New</i>
               <strong>Buck Tooth Bob</strong><span>Bald, buck teeth, little mustache</span>
             </div>
             <div class="opt" role="button" tabindex="0" id="face-ruby" data-pick="ruby" aria-pressed="false">
-              <div class="thumb" title="Tap to enlarge"><img src="img/ruby.jpg" alt="Rowdy Ruby mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
+              <div class="thumb"><img src="img/ruby.jpg" alt="Rowdy Ruby mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
               <i class="count" hidden></i><i class="low">Only 4 left</i>
               <strong>Rowdy Ruby</strong><span>Red curls, mid-laugh</span>
             </div>
             <div class="opt" role="button" tabindex="0" id="face-stache" data-pick="stache" aria-pressed="false">
-              <div class="thumb" title="Tap to enlarge"><img src="img/stache.jpg" alt="Grandpa Stache mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
+              <div class="thumb"><img src="img/stache.jpg" alt="Grandpa Stache mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
               <i class="count" hidden></i>
               <strong>Grandpa Stache</strong><span>Grumpy face, giant white mustache</span>
             </div>
             <div class="opt" role="button" tabindex="0" id="face-cigar" data-pick="cigar" aria-pressed="false">
-              <div class="thumb" title="Tap to enlarge"><img src="img/cigar.jpg" alt="Cigar Carl mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
+              <div class="thumb"><img src="img/cigar.jpg" alt="Cigar Carl mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
               <i class="count" hidden></i>
               <strong>Cigar Carl</strong><span>Happy grandpa with a fat cigar</span>
             </div>
             <div class="opt" role="button" tabindex="0" id="face-tongue" data-pick="tongue" aria-pressed="false">
-              <div class="thumb" title="Tap to enlarge"><img src="img/tongue.jpg" alt="Tongue Out mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
+              <div class="thumb"><img src="img/tongue.jpg" alt="Tongue Out mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
               <i class="count" hidden></i>
               <strong>Tongue Out</strong><span>Bandana hood, tongue all the way out</span>
             </div>
@@ -414,7 +415,8 @@ $("checkout").addEventListener("click", async ()=>{
 });
 /* ===== Big photo preview ===== */
 const big=$("big"); let bigFace=null;
-document.querySelectorAll(".faces .thumb").forEach(t=>t.addEventListener("click",e=>{
+const canZoom=window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+if(canZoom) document.querySelectorAll(".faces .thumb").forEach(t=>t.addEventListener("click",e=>{
   e.stopPropagation();
   const card=t.closest("[data-pick]"); bigFace=card.dataset.pick;
   $("bigImg").src=t.querySelector("img").src; $("bigImg").alt=t.querySelector("img").alt;
