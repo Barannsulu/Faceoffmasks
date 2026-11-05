@@ -17,29 +17,32 @@ const FACES = {
   tongue:   { name: "Tongue Out",     code: "Style-2", img: "img/tongue.jpg" },
 };
 
-const MAX_MASKS = 20;
+const PACKS = {
+  1: { label: "Single Mask", amount: 1999, ship: { amount: 499, name: "Standard Shipping" } },
+  2: { label: "Duo Pack (2 masks)", amount: 2999, ship: { amount: 0, name: "Free Shipping" } },
+  5: { label: "5-Pack (5 masks)", amount: 6499, ship: { amount: 0, name: "Free Shipping" } },
+};
 const STOCK = { ruby: 4 }; // faces with limited stock
 
 const json = (status, body) =>
   new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });
 
-// Pricing: every 2 masks = $29.99, a leftover single = $19.99.
-// Shipping is free on 2+ masks, $4.99 for a single mask.
-export function buildParams({ faces }, site) {
-  if (!Array.isArray(faces) || faces.length < 1 || !faces.every((x) => FACES[x]))
-    throw new Error("Pick at least one face.");
-  if (faces.length > MAX_MASKS) throw new Error(`For more than ${MAX_MASKS} masks, please email us.`);
-
+// Pricing: 1 mask $19.99 (+$4.99 shipping), 2 masks $29.99, 5 masks $64.99 (free shipping on packs).
+export function buildParams({ pack, faces }, site) {
+  const p = PACKS[pack];
+  if (!p) throw new Error("Pick a pack.");
+  if (!Array.isArray(faces) || faces.length !== Number(pack) || !faces.every((x) => FACES[x]))
+    throw new Error(pack == 1 ? "Pick a face." : `Pick ${pack} faces.`);
   for (const [x, left] of Object.entries(STOCK))
     if (faces.filter((y) => y === x).length > left) throw new Error(`Only ${left} ${FACES[x].name} masks left.`);
 
-  const n = faces.length, duos = Math.floor(n / 2), single = n % 2;
+  const n = faces.length;
   const tally = {};
   faces.forEach((x) => (tally[x] = (tally[x] || 0) + 1));
   const summary = Object.entries(tally).map(([x, k]) => FACES[x].name + (k > 1 ? ` x${k}` : "")).join(" + ");
   const codes = Object.entries(tally).map(([x, k]) => FACES[x].code + (k > 1 ? ` x${k}` : "")).join(" + ");
   const images = Object.keys(tally).slice(0, 8).map((x) => `${site}/${FACES[x].img}`);
-  const ship = n === 1 ? { amount: 499, name: "Standard Shipping" } : { amount: 0, name: "Free Shipping" };
+  const ship = p.ship;
 
   const f = new URLSearchParams();
   f.append("mode", "payment");
@@ -55,8 +58,7 @@ export function buildParams({ faces }, site) {
     f.append(`line_items[${i}][quantity]`, String(qty));
     i++;
   };
-  if (duos) addLine("Face Off Duo Pack (2 masks)", 2999, duos);
-  if (single) addLine("Face Off Single Mask", 1999, 1);
+  addLine(`Face Off ${p.label}`, p.amount, 1);
 
   f.append("shipping_address_collection[allowed_countries][0]", "US");
   f.append("shipping_options[0][shipping_rate_data][type]", "fixed_amount");
