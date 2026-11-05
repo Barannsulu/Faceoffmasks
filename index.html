@@ -103,7 +103,6 @@ dialog.big p{margin:0;color:var(--muted)}
 dialog.big .btn{justify-content:center;margin-top:10px}
 dialog.big .x{position:absolute;top:10px;right:10px;width:38px;height:38px;border-radius:50%;border:0;background:rgba(20,35,58,.78);color:#fff;font:700 20px/1 var(--body);cursor:pointer}
 @media (hover: none), (pointer: coarse){.opt .zoom{display:none}.opt .thumb{cursor:pointer}}
-.packs .tier{cursor:default}
 .opt .minus{position:absolute;top:18px;left:18px;width:30px;height:30px;border-radius:50%;border:0;background:var(--ink);color:var(--snow);font:800 18px/1 var(--body);display:grid;place-items:center;cursor:pointer;z-index:1}
 .opt .minus:focus-visible{outline:3px solid var(--yellow);outline-offset:2px}
 .mbar{display:none}
@@ -116,7 +115,8 @@ dialog.big .x{position:absolute;top:10px;right:10px;width:38px;height:38px;borde
   .mbar[hidden]{display:none}
   footer{padding-bottom:110px}
 }
-.packs{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.packs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.packs .opt{padding-top:18px}
 .packs .opt{grid-template-columns:1fr auto;align-items:center}
 .packs .price{font:400 26px var(--display)}
 .save{position:absolute;top:-10px;right:12px;white-space:nowrap;background:var(--yellow);color:#14233a;font:800 11px var(--body);letter-spacing:.06em;text-transform:uppercase;padding:4px 8px;border-radius:6px}
@@ -177,6 +177,7 @@ footer small{opacity:.7;font-size:13px}
 }
 @media (max-width:460px){
   .specs,.packs{grid-template-columns:1fr}
+  .packs .opt{padding-top:12px}
   .sticker{width:76px;height:76px;font-size:12px}
 }
 </style>
@@ -217,19 +218,23 @@ footer small{opacity:.7;font-size:13px}
     <div class="order">
       <div class="pick">
         <div class="group">
-          <h3>Pricing</h3>
-          <div class="packs">
-            <div class="opt tier">
+          <h3>1. How many masks?</h3>
+          <div class="packs" role="group" aria-label="Pack size">
+            <button class="opt" id="pack-1" data-pack="1" aria-pressed="false">
               <div><strong>1 mask</strong><br><span>+ $4.99 shipping</span></div><div class="price">$19.99</div>
-            </div>
-            <div class="opt tier">
+            </button>
+            <button class="opt" id="pack-2" data-pack="2" aria-pressed="true">
               <i class="save">Save $10 + Free shipping</i>
-              <div><strong>Every 2 masks</strong><br><span>mix any faces</span></div><div class="price">$29.99</div>
-            </div>
+              <div><strong>2 masks</strong><br><span>mix any faces</span></div><div class="price">$29.99</div>
+            </button>
+            <button class="opt" id="pack-5" data-pack="5" aria-pressed="false">
+              <i class="save">Best value · $13 each</i>
+              <div><strong>5 masks</strong><br><span>free shipping, mix any faces</span></div><div class="price">$64.99</div>
+            </button>
           </div>
         </div>
         <div class="group">
-          <h3 id="faceLabel">Pick your faces</h3>
+          <h3 id="faceLabel">2. Pick 2 faces</h3>
           <div class="faces" role="group" aria-labelledby="faceLabel">
             <div class="opt" role="button" tabindex="0" id="face-granny" data-pick="granny" aria-pressed="false">
               <div class="thumb"><img src="img/sam.jpg" alt="Smokin' Sam mask" loading="lazy"><span class="zoom" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></span></div>
@@ -297,14 +302,14 @@ footer small{opacity:.7;font-size:13px}
               <strong>Tongue Out</strong><span>Bandana hood, tongue all the way out</span>
             </div>
           </div>
-          <p class="hint" id="hint">Tap a face to add it, tap again to add another. Order as many as you like.</p>
+          <p class="hint" id="hint">Mix any faces, or tap one twice to get two of the same.</p>
         </div>
       </div>
 
       <aside class="ticket" aria-live="polite">
         <div class="top"><span>Lift ticket · Adult</span><span class="hole"></span></div>
         <div class="body">
-          <div class="row"><span class="k">Masks</span><span id="tPack">2</span></div>
+          <div class="row"><span class="k">Pack</span><span id="tPack">2 masks</span></div>
           <div class="row"><span class="k">Faces</span><span id="tFaces" style="text-align:right">Gus + Tony</span></div>
           <div class="row"><span class="k">Shipping</span><span id="tShip">Free</span></div>
           <hr class="perf">
@@ -312,7 +317,7 @@ footer small{opacity:.7;font-size:13px}
           <div class="row" style="align-items:end"><span class="k">Total</span><span class="total" id="tTotal">$29.99</span></div>
           <button class="btn" id="checkout">Checkout securely</button>
           <div class="flash" id="flash" hidden></div>
-          <div class="note">Card, Apple Pay, Cash App &amp; Klarna via Stripe. Free shipping on 2 or more masks.</div>
+          <div class="note">Card, Apple Pay, Cash App &amp; Klarna via Stripe. Free shipping on 2 or more masks. Need more than 5? Email us.</div>
           <div class="barcode" aria-hidden="true"></div>
         </div>
       </aside>
@@ -386,48 +391,55 @@ footer small{opacity:.7;font-size:13px}
 
 /* ===== Order state ===== */
 const NAMES = {granny:"Sam", tony:"Tony", gus:"Gus", bigmouth:"Big Mouth", snaggle:"Snaggle", pearly:"Pearly", glamma:"Glamma", willie:"Willie", bucky:"Bob", ruby:"Ruby", stache:"Stache", cigar:"Carl", tongue:"Tongue Out"};
-const MAX = 20;
+const PACKS = {1:{price:1999, ship:499}, 2:{price:2999, ship:0}, 5:{price:6499, ship:0}};
 const STOCK = {ruby:4};
-let cart = {gus:1, tony:1};
+let pack = 2, picks = ["gus","tony"];   // picks keeps the order faces were added
 const $ = id => document.getElementById(id);
 const money = c => "$" + (c/100).toFixed(2);
-function price(n){
-  const duos = Math.floor(n/2), single = n % 2;
-  const sub = duos*2999 + single*1999, ship = n===1 ? 499 : 0;
-  return {sub, ship, total: sub+ship, save: n*1999 - sub};
-}
-const count = () => Object.values(cart).reduce((a,b)=>a+b,0);
+const countOf = f => picks.filter(p=>p===f).length;
 
 function render(){
-  const n = count(), p = price(n);
+  const P = PACKS[pack], n = picks.length, left = pack - n, full = left===0;
+  document.querySelectorAll("[data-pack]").forEach(b=>b.setAttribute("aria-pressed", String(+b.dataset.pack===pack)));
   document.querySelectorAll("[data-pick]").forEach(b=>{
-    const k = cart[b.dataset.pick] || 0;
+    const k = countOf(b.dataset.pick);
     b.setAttribute("aria-pressed", String(k>0));
     const c=b.querySelector(".count"); c.hidden = k<1; c.textContent = "×"+k;
-    b.querySelector(".minus").hidden = k<1;
+    b.querySelector(".minus").hidden = k<1 || pack===1;
   });
-  $("tPack").textContent = n;
-  $("tFaces").textContent = Object.entries(cart).filter(([,k])=>k>0).map(([f,k])=>NAMES[f]+(k>1?" ×"+k:"")).join(" + ") || "Pick a face";
-  $("tShip").textContent = n===0 ? "—" : (p.ship ? money(p.ship) : "Free");
-  $("tSaveRow").hidden = p.save<=0;
-  $("tSave").textContent = money(p.save);
-  $("tTotal").textContent = money(p.total);
-  $("checkout").disabled = n===0;
-  $("mTotal").textContent = money(p.total);
-  $("mCount").textContent = n===0 ? "Pick a face" : n+" mask"+(n>1?"s":"")+" · "+(p.ship?"+ shipping":"free shipping");
-  $("mCheckout").disabled = n===0;
+  $("faceLabel").textContent = pack===1 ? "2. Pick a face" : `2. Pick ${pack} faces (${n}/${pack})`;
+  $("hint").hidden = pack===1;
+  $("tPack").textContent = pack===1 ? "1 mask" : pack+" masks";
+  const tally = {}; picks.forEach(f=>tally[f]=(tally[f]||0)+1);
+  $("tFaces").textContent = Object.entries(tally).map(([f,k])=>NAMES[f]+(k>1?" ×"+k:"")).join(" + ") || "Pick a face";
+  $("tShip").textContent = P.ship ? money(P.ship) : "Free";
+  const save = pack*1999 - P.price;
+  $("tSaveRow").hidden = save<=0; $("tSave").textContent = money(save);
+  $("tTotal").textContent = money(P.price + P.ship);
+  $("checkout").disabled = !full;
+  $("checkout").textContent = full ? "Checkout securely" : `Pick ${left} more face${left>1?"s":""}`;
+  $("mTotal").textContent = money(P.price + P.ship);
+  $("mCount").textContent = full ? (pack===1?"1 mask · + shipping":pack+" masks · free shipping") : `${n}/${pack} faces picked`;
+  $("mCheckout").disabled = !full;
+  $("mCheckout").textContent = full ? "Checkout" : `${left} more`;
   $("flash").hidden = true;
 }
+document.querySelectorAll("[data-pack]").forEach(b=>b.addEventListener("click",()=>{
+  pack = +b.dataset.pack;
+  if(picks.length > pack) picks = picks.slice(-pack);
+  render();
+}));
 document.querySelectorAll("[data-pick]").forEach(b=>b.addEventListener("click",()=>{
-  if(count()>=MAX){ $("flash").textContent="For orders over "+MAX+" masks, email us."; $("flash").hidden=false; return; }
   const f = b.dataset.pick;
-  if(STOCK[f]!=null && (cart[f]||0)>=STOCK[f]){ render(); $("flash").textContent="Only "+STOCK[f]+" "+NAMES[f]+" masks left."; $("flash").hidden=false; return; }
-  cart[f] = (cart[f]||0)+1; render();
+  if(STOCK[f]!=null && countOf(f)>=STOCK[f]){ render(); $("flash").textContent="Only "+STOCK[f]+" "+NAMES[f]+" masks left."; $("flash").hidden=false; return; }
+  if(pack===1) picks=[f];
+  else { picks.push(f); if(picks.length>pack) picks.shift(); }
+  render();
 }));
 document.querySelectorAll(".faces .minus").forEach(m=>m.addEventListener("click",e=>{
   e.stopPropagation();
-  const f = m.closest("[data-pick]").dataset.pick;
-  cart[f] = Math.max(0,(cart[f]||0)-1); if(!cart[f]) delete cart[f]; render();
+  const f = m.closest("[data-pick]").dataset.pick, i = picks.lastIndexOf(f);
+  if(i>-1) picks.splice(i,1); render();
 }));
 $("checkout").addEventListener("click", async ()=>{
   const btn=$("checkout"), flash=$("flash");
@@ -435,7 +447,7 @@ $("checkout").addEventListener("click", async ()=>{
   try{
     const r = await fetch("/.netlify/functions/checkout",{
       method:"POST", headers:{"Content-Type":"application/json"},
-      body: JSON.stringify({faces: Object.entries(cart).flatMap(([f,k])=>Array(k).fill(f))})
+      body: JSON.stringify({pack, faces:picks})
     });
     const d = await r.json().catch(()=>({}));
     if(!r.ok || !d.url) throw new Error(d.error || "Checkout is unavailable right now.");
